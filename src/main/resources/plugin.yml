@@ -1,0 +1,17 @@
+name: JAWP
+version: 1.0.0
+author: jf908
+main: net.xyfe.spigot.jawp.JAWP
+commands:
+  warp:
+    description: Teleport to a warp
+    usage: /warp <name>
+  warps:
+    description: Lists all the existing warps
+    usage: /warps
+  setwarp:
+    description: Creates a new warp
+    usage: /setwarp <name>
+  delwarp:
+    description: Deletes a warp
+    usage: /delwarp <name>
