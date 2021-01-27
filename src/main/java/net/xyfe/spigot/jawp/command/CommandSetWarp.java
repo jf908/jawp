@@ -16,6 +16,7 @@ import net.xyfe.spigot.jawp.JAWP;
  */
 public class CommandSetWarp implements CommandExecutor, TabCompleter {
   public static final String name = "setwarp";
+  public static final String permission = "jawp.command.setwarp";
 
   @Override
   public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -25,6 +26,10 @@ public class CommandSetWarp implements CommandExecutor, TabCompleter {
       sender.sendMessage("There must be at least 1 argument.");
       return true;
     } else {
+      if (!CmdUtil.hasPermission(sender, permission)) {
+        return true;
+      }
+
       if (sender instanceof Player) {
         boolean success = JAWP.instance.manager.createWarp(args[0], ((Player) sender).getLocation());
         if (!success) {

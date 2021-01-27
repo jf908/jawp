@@ -14,11 +14,17 @@ import net.xyfe.spigot.jawp.JAWP;
  */
 public class CommandWarps implements CommandExecutor, TabCompleter {
   public static final String name = "warps";
+  public static final String permission = "jawp.command.warps";
 
   @Override
   public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
     if (!cmd.getName().equalsIgnoreCase(name))
       return false;
+
+    if (!CmdUtil.hasPermission(sender, permission)) {
+      return true;
+    }
+
     sender.sendMessage(JAWP.instance.manager.getWarps().toString());
     return true;
   }

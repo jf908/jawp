@@ -15,3 +15,16 @@ commands:
   delwarp:
     description: Deletes a warp
     usage: /delwarp <name>
+permissions:
+  jawp.command.warp:
+    description: Allows you to teleport to warps
+    default: true
+  jawp.command.warps:
+    description: Allows you to list warps
+    default: true
+  jawp.command.setwarp:
+    description: Allows you to set new warps
+    default: op
+  jawp.command.delwarp:
+    description: Allows you to delete warps
+    default: op
